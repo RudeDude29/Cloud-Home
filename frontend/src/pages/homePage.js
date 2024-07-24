@@ -3,6 +3,7 @@ import Navbar from "../components/navbar";
 import useCreateFolder from "../hooks/useCreateFolder";
 import useGetFileFolders from "../hooks/useGetFileFolders";
 import useDeleteFolders from "../hooks/useDeleteFolders.js";
+import useUploadFile from "../hooks/useUploadFile";
 
 const HomePage = () => {
 
@@ -16,9 +17,13 @@ const HomePage = () => {
     
     const parentFolder = folderStructure[folderStructure.length-1];
 
-    const handleDoubleClick = (elem)=>{
-        setFolderStructure([...folderStructure,elem]);
-    }
+    const handleDoubleClick = (elem) => {
+        if (elem.type == "folder") {
+            setFolderStructure([...folderStructure, elem]);
+        } else {
+            window.open(elem.link);
+        }
+    };
 
     const handleAllowCreateFolder = ()=>{
         setShowCreateFolder(true);
@@ -35,29 +40,40 @@ const HomePage = () => {
         }
     }
     
-    const handleDelete = async ()=>{
-        if(newFolder.length>0){
-            await deleteFolder({name:newFolder});
-            getFileFolders();
-            setShowCreateFolder(false);
-        }
-        else{
-            alert("Enter Name")
-        }
-    }
+    // const handleDelete = async ()=>{
+    //     if(newFolder.length>0){
+    //         await deleteFolder({name:newFolder});
+    //         getFileFolders();
+    //         setShowCreateFolder(false);
+    //     }
+    //     else{
+    //         alert("Enter Name")
+    //     }
+    // }
 
     const handleBackClick = (clickIndx)=>{
            const newFolderStructure = folderStructure.filter((elem,idx)=> idx<=clickIndx);
            setFolderStructure(newFolderStructure);
     }
 
-    const handleFileUpload = ()=>{
-        
-    }
-
     useEffect(()=>{
         getFileFolders(parentFolder._id);
      },[folderStructure])
+
+     const { isUploadAllowed, uploadFile } = useUploadFile();
+    const handleFileUpload = async (e) => {
+        if (isUploadAllowed) {
+            const file = e.target.files;
+            console.log(file);
+            await uploadFile({
+                file: file[0],
+                parentId: parentFolder._id,
+            });
+            getFileFolders(parentFolder._id);
+        } else {
+            alert("Uploading is already in progress. Please wait...");
+        }
+    };
 
     return (
         <div>
@@ -65,10 +81,9 @@ const HomePage = () => {
             <h1>Home</h1>
             <div className="homepage-main-container">
                 <h4>Welcome to Cloud Home</h4>
-                <input className="file-upload-input" ref={inputRef} type="file" onChange={handleFileUpload} />
                 <button onClick={handleAllowCreateFolder}>Create Folder</button>
-                <button >Upload File</button>
-                <ul>
+                <input className="file-upload-input" ref={inputRef} type="file" onChange={handleFileUpload} />
+                <ul style={{ display: "flex", padding: "24px", gap: "24px" }}>
                 {folderStructure.flatMap((elem,idx)=>{
                     return <li onClick={()=>handleBackClick(idx)}>{elem.name}</li>
                 })}
@@ -78,7 +93,7 @@ const HomePage = () => {
                     {showCreateFolder && <div><input value={newFolder} onChange={(e)=>setNewFolder(e.target.value)} />
                     <button onClick={handleCreateFolder}>Create</button>
                     <button onClick={() => setShowCreateFolder(false)}>Cancel</button>
-                    <button onClick={handleDelete}>Delete</button>
+                    {/* <button onClick={handleDelete}>Delete</button> */}
                     </div>}
                 </div>
             </div>

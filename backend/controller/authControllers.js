@@ -97,7 +97,7 @@ const login = async (req, res) => {
                 data: {},
             });
             return;
-        }
+        } 
 
         res.status(200);
         res.json({
