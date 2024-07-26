@@ -4,7 +4,7 @@
   "description": "",
   "main": "./public/main.js",
   "scripts": {
-    "start": "nodemon main.js"
+    "start": "nodemon ./public/main.js"
   },
   "author": "",
   "license": "ISC",
