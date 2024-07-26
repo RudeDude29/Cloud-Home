@@ -39566,9 +39566,14 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _useLogin = require("../hooks/useLogin");
 var _useLoginDefault = parcelHelpers.interopDefault(_useLogin);
+var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
 const LoginPage = ()=>{
     _s();
+    const Navigate = (0, _reactRouterDom.useNavigate)();
+    const toLogin = ()=>{
+        Navigate("/signup");
+    };
     const loginPageStyles = {
         display: "flex",
         flexDirection: "column",
@@ -39576,7 +39581,43 @@ const LoginPage = ()=>{
         justifyContent: "center",
         gap: "24px",
         margin: "auto",
-        padding: "24px"
+        padding: "40px",
+        maxWidth: "400px",
+        border: "1px solid #ccc",
+        borderRadius: "8px",
+        boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+        background: "#fff",
+        textAlign: "center"
+    };
+    const inputStyles = {
+        width: "100%",
+        padding: "12px",
+        borderRadius: "4px",
+        border: "1px solid #ccc",
+        fontSize: "1rem",
+        marginBottom: "16px"
+    };
+    const buttonStyles = {
+        padding: "8px 16px",
+        backgroundColor: "#007bff",
+        color: "#fff",
+        border: "none",
+        borderRadius: "4px",
+        cursor: "pointer",
+        fontSize: "1rem",
+        transition: "background-color 0.3s ease",
+        width: "100%",
+        marginBottom: "16px"
+    };
+    const SignupStyles = {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "4px"
+    };
+    const linkStyles = {
+        cursor: "pointer",
+        color: "blue"
     };
     const [email, setEmail] = (0, _react.useState)("");
     const [password, setPassword] = (0, _react.useState)("");
@@ -39590,43 +39631,88 @@ const LoginPage = ()=>{
         else alert("Validation Failed");
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        style: loginPageStyles,
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                type: "text",
-                value: email,
-                onChange: (e)=>setEmail(e.target.value)
-            }, void 0, false, {
-                fileName: "src/pages/loginPage.js",
-                lineNumber: 29,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                type: "password",
-                value: password,
-                onChange: (e)=>setPassword(e.target.value)
-            }, void 0, false, {
-                fileName: "src/pages/loginPage.js",
-                lineNumber: 30,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                onClick: handleSubmit,
-                children: "login"
-            }, void 0, false, {
-                fileName: "src/pages/loginPage.js",
-                lineNumber: 31,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
+        style: {
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh",
+            background: "#f0f2f5"
+        },
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            style: loginPageStyles,
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                    children: "Login to Cloud-Home"
+                }, void 0, false, {
+                    fileName: "src/pages/loginPage.js",
+                    lineNumber: 74,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                    type: "text",
+                    value: email,
+                    onChange: (e)=>setEmail(e.target.value),
+                    style: inputStyles,
+                    placeholder: "Email"
+                }, void 0, false, {
+                    fileName: "src/pages/loginPage.js",
+                    lineNumber: 75,
+                    columnNumber: 13
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                    type: "password",
+                    value: password,
+                    onChange: (e)=>setPassword(e.target.value),
+                    style: inputStyles,
+                    placeholder: "Password"
+                }, void 0, false, {
+                    fileName: "src/pages/loginPage.js",
+                    lineNumber: 82,
+                    columnNumber: 13
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    onClick: handleSubmit,
+                    style: buttonStyles,
+                    children: "Login"
+                }, void 0, false, {
+                    fileName: "src/pages/loginPage.js",
+                    lineNumber: 89,
+                    columnNumber: 13
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    style: SignupStyles,
+                    children: [
+                        "New member? ",
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                            style: linkStyles,
+                            onClick: toLogin,
+                            children: "Sign Up"
+                        }, void 0, false, {
+                            fileName: "src/pages/loginPage.js",
+                            lineNumber: 92,
+                            columnNumber: 49
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/pages/loginPage.js",
+                    lineNumber: 92,
+                    columnNumber: 13
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/pages/loginPage.js",
+            lineNumber: 73,
+            columnNumber: 9
+        }, undefined)
+    }, void 0, false, {
         fileName: "src/pages/loginPage.js",
-        lineNumber: 28,
+        lineNumber: 72,
         columnNumber: 9
     }, undefined);
 };
-_s(LoginPage, "v1b20UfniWBzn58xpE4jdVMYT7I=", false, function() {
+_s(LoginPage, "6Xf5fnUxDQuMES1cs11kvhtr468=", false, function() {
     return [
+        (0, _reactRouterDom.useNavigate),
         (0, _useLoginDefault.default)
     ];
 });
@@ -39640,7 +39726,7 @@ $RefreshReg$(_c, "LoginPage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../hooks/useLogin":"bFiYx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bFiYx":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../hooks/useLogin":"bFiYx","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bFiYx":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _reactRedux = require("react-redux");
@@ -39831,17 +39917,57 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _useSignup = require("../hooks/useSignup");
 var _useSignupDefault = parcelHelpers.interopDefault(_useSignup);
+var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
 const SignupPage = ()=>{
     _s();
-    const loginPageStyles = {
+    const navigate = (0, _reactRouterDom.useNavigate)();
+    const toLogin = ()=>{
+        navigate("/login");
+    };
+    const containerStyles = {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
         gap: "24px",
         margin: "auto",
-        padding: "24px"
+        padding: "40px",
+        maxWidth: "400px",
+        border: "1px solid #ccc",
+        borderRadius: "12px",
+        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+        background: "#fff",
+        textAlign: "center" // Centered text alignment
+    };
+    const inputStyles = {
+        width: "100%",
+        padding: "12px",
+        borderRadius: "8px",
+        border: "1px solid #ccc",
+        fontSize: "1rem",
+        marginBottom: "16px"
+    };
+    const buttonStyles = {
+        padding: "12px 20px",
+        backgroundColor: "#007bff",
+        color: "#fff",
+        border: "none",
+        borderRadius: "8px",
+        cursor: "pointer",
+        fontSize: "1rem",
+        width: "100%",
+        marginBottom: "16px"
+    };
+    const loginStyles = {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "4px"
+    };
+    const linkStyles = {
+        cursor: "pointer",
+        color: "#007bff"
     };
     const [email, setEmail] = (0, _react.useState)("");
     const [password, setPassword] = (0, _react.useState)("");
@@ -39855,43 +39981,96 @@ const SignupPage = ()=>{
         else alert("Validation Failed");
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        style: loginPageStyles,
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                type: "text",
-                value: email,
-                onChange: (e)=>setEmail(e.target.value)
-            }, void 0, false, {
-                fileName: "src/pages/signupPage.js",
-                lineNumber: 29,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                type: "password",
-                value: password,
-                onChange: (e)=>setPassword(e.target.value)
-            }, void 0, false, {
-                fileName: "src/pages/signupPage.js",
-                lineNumber: 30,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                onClick: handleSubmit,
-                children: "Sign Up"
-            }, void 0, false, {
-                fileName: "src/pages/signupPage.js",
-                lineNumber: 31,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
+        style: {
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh",
+            background: "#f0f2f5"
+        },
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            style: containerStyles,
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                    children: "Sign Up to Cloud-Home"
+                }, void 0, false, {
+                    fileName: "src/pages/signupPage.js",
+                    lineNumber: 77,
+                    columnNumber: 17
+                }, undefined),
+                " ",
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                    type: "text",
+                    value: email,
+                    onChange: (e)=>setEmail(e.target.value),
+                    style: inputStyles,
+                    placeholder: "Email"
+                }, void 0, false, {
+                    fileName: "src/pages/signupPage.js",
+                    lineNumber: 78,
+                    columnNumber: 17
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                    type: "password",
+                    value: password,
+                    onChange: (e)=>setPassword(e.target.value),
+                    style: inputStyles,
+                    placeholder: "Password"
+                }, void 0, false, {
+                    fileName: "src/pages/signupPage.js",
+                    lineNumber: 85,
+                    columnNumber: 17
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    onClick: handleSubmit,
+                    className: "btn-signup",
+                    style: buttonStyles,
+                    children: "Sign Up"
+                }, void 0, false, {
+                    fileName: "src/pages/signupPage.js",
+                    lineNumber: 92,
+                    columnNumber: 17
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    style: loginStyles,
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            children: "Already have an account?"
+                        }, void 0, false, {
+                            fileName: "src/pages/signupPage.js",
+                            lineNumber: 96,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            style: linkStyles,
+                            onClick: toLogin,
+                            children: "Login"
+                        }, void 0, false, {
+                            fileName: "src/pages/signupPage.js",
+                            lineNumber: 97,
+                            columnNumber: 21
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/pages/signupPage.js",
+                    lineNumber: 95,
+                    columnNumber: 17
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/pages/signupPage.js",
+            lineNumber: 76,
+            columnNumber: 13
+        }, undefined)
+    }, void 0, false, {
         fileName: "src/pages/signupPage.js",
-        lineNumber: 28,
+        lineNumber: 75,
         columnNumber: 9
     }, undefined);
 };
-_s(SignupPage, "qemoaMxNxjIPEJRL+whuyzuZT0U=", false, function() {
+_s(SignupPage, "8cATCG10/u99xVM6CALEVU2h0Y4=", false, function() {
     return [
+        (0, _reactRouterDom.useNavigate),
         (0, _useSignupDefault.default)
     ];
 });
@@ -39905,7 +40084,7 @@ $RefreshReg$(_c, "SignupPage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../hooks/useSignup":"2CGME","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2CGME":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../hooks/useSignup":"2CGME","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2CGME":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _reactRouterDom = require("react-router-dom");
@@ -39961,10 +40140,11 @@ var _useCreateFolder = require("../hooks/useCreateFolder");
 var _useCreateFolderDefault = parcelHelpers.interopDefault(_useCreateFolder);
 var _useGetFileFolders = require("../hooks/useGetFileFolders");
 var _useGetFileFoldersDefault = parcelHelpers.interopDefault(_useGetFileFolders);
-var _useDeleteFoldersJs = require("../hooks/useDeleteFolders.js");
-var _useDeleteFoldersJsDefault = parcelHelpers.interopDefault(_useDeleteFoldersJs);
+var _useDeleteFolders = require("../hooks/useDeleteFolders");
+var _useDeleteFoldersDefault = parcelHelpers.interopDefault(_useDeleteFolders);
 var _useUploadFile = require("../hooks/useUploadFile");
 var _useUploadFileDefault = parcelHelpers.interopDefault(_useUploadFile);
+var _stylesCss = require("../components/navbar/styles.css");
 var _s = $RefreshSig$();
 const HomePage = ()=>{
     _s();
@@ -39978,11 +40158,11 @@ const HomePage = ()=>{
         }
     ]);
     const { fileFolders, getFileFolders } = (0, _useGetFileFoldersDefault.default)();
-    const { deleteFolder } = (0, _useDeleteFoldersJsDefault.default)();
+    const { deleteFolder } = (0, _useDeleteFoldersDefault.default)();
     const inputRef = (0, _react.useRef)(null);
     const parentFolder = folderStructure[folderStructure.length - 1];
     const handleDoubleClick = (elem)=>{
-        if (elem.type == "folder") setFolderStructure([
+        if (elem.type === "folder") setFolderStructure([
             ...folderStructure,
             elem
         ]);
@@ -40001,16 +40181,6 @@ const HomePage = ()=>{
             setShowCreateFolder(false);
         } else alert("Enter name");
     };
-    // const handleDelete = async ()=>{
-    //     if(newFolder.length>0){
-    //         await deleteFolder({name:newFolder});
-    //         getFileFolders();
-    //         setShowCreateFolder(false);
-    //     }
-    //     else{
-    //         alert("Enter Name")
-    //     }
-    // }
     const handleBackClick = (clickIndx)=>{
         const newFolderStructure = folderStructure.filter((elem, idx)=>idx <= clickIndx);
         setFolderStructure(newFolderStructure);
@@ -40036,32 +40206,26 @@ const HomePage = ()=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default), {}, void 0, false, {
                 fileName: "src/pages/homePage.js",
-                lineNumber: 80,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "Home"
-            }, void 0, false, {
-                fileName: "src/pages/homePage.js",
-                lineNumber: 81,
+                lineNumber: 67,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "homepage-main-container",
                 children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                        children: "Welcome to Cloud Home"
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                        children: "Home"
                     }, void 0, false, {
                         fileName: "src/pages/homePage.js",
-                        lineNumber: 83,
+                        lineNumber: 69,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: "btn-create",
                         onClick: handleAllowCreateFolder,
                         children: "Create Folder"
                     }, void 0, false, {
                         fileName: "src/pages/homePage.js",
-                        lineNumber: 84,
+                        lineNumber: 70,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -40071,116 +40235,101 @@ const HomePage = ()=>{
                         onChange: handleFileUpload
                     }, void 0, false, {
                         fileName: "src/pages/homePage.js",
-                        lineNumber: 85,
+                        lineNumber: 71,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                        style: {
-                            display: "flex",
-                            padding: "24px",
-                            gap: "24px"
-                        },
                         children: folderStructure.flatMap((elem, idx)=>{
                             return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                 onClick: ()=>handleBackClick(idx),
                                 children: elem.name
-                            }, void 0, false, {
+                            }, idx, false, {
                                 fileName: "src/pages/homePage.js",
-                                lineNumber: 88,
-                                columnNumber: 28
+                                lineNumber: 74,
+                                columnNumber: 32
                             }, undefined);
                         })
                     }, void 0, false, {
                         fileName: "src/pages/homePage.js",
-                        lineNumber: 86,
+                        lineNumber: 72,
                         columnNumber: 17
                     }, undefined),
+                    showCreateFolder && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "create-folder-modal",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                value: newFolder,
+                                onChange: (e)=>setNewFolder(e.target.value)
+                            }, void 0, false, {
+                                fileName: "src/pages/homePage.js",
+                                lineNumber: 80,
+                                columnNumber: 25
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                onClick: handleCreateFolder,
+                                children: "Create"
+                            }, void 0, false, {
+                                fileName: "src/pages/homePage.js",
+                                lineNumber: 81,
+                                columnNumber: 25
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                onClick: ()=>setShowCreateFolder(false),
+                                children: "Cancel"
+                            }, void 0, false, {
+                                fileName: "src/pages/homePage.js",
+                                lineNumber: 82,
+                                columnNumber: 25
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/pages/homePage.js",
+                        lineNumber: 79,
+                        columnNumber: 21
+                    }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        children: showCreateFolder && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                    value: newFolder,
-                                    onChange: (e)=>setNewFolder(e.target.value)
+                        className: "folder-file-container",
+                        children: fileFolders.map((elem)=>{
+                            const itemClass = elem.type === "folder" ? "folder-item" : "file-item";
+                            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: itemClass,
+                                onDoubleClick: ()=>handleDoubleClick(elem),
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    children: elem.name
                                 }, void 0, false, {
                                     fileName: "src/pages/homePage.js",
-                                    lineNumber: 93,
-                                    columnNumber: 47
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                    onClick: handleCreateFolder,
-                                    children: "Create"
-                                }, void 0, false, {
-                                    fileName: "src/pages/homePage.js",
-                                    lineNumber: 94,
-                                    columnNumber: 21
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                    onClick: ()=>setShowCreateFolder(false),
-                                    children: "Cancel"
-                                }, void 0, false, {
-                                    fileName: "src/pages/homePage.js",
-                                    lineNumber: 95,
-                                    columnNumber: 21
+                                    lineNumber: 96,
+                                    columnNumber: 33
                                 }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/pages/homePage.js",
-                            lineNumber: 93,
-                            columnNumber: 42
-                        }, undefined)
+                            }, elem._id, false, {
+                                fileName: "src/pages/homePage.js",
+                                lineNumber: 91,
+                                columnNumber: 29
+                            }, undefined);
+                        })
                     }, void 0, false, {
                         fileName: "src/pages/homePage.js",
-                        lineNumber: 92,
+                        lineNumber: 87,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/homePage.js",
-                lineNumber: 82,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: fileFolders.map((elem)=>{
-                    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        style: {
-                            backgroundColor: "yellow",
-                            border: "1px solid grey",
-                            borderRadius: "8px",
-                            width: "fit-content",
-                            padding: "8px 16px",
-                            margin: "8px 16px"
-                        },
-                        onDoubleClick: ()=>handleDoubleClick(elem),
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                            children: elem.name
-                        }, void 0, false, {
-                            fileName: "src/pages/homePage.js",
-                            lineNumber: 114,
-                            columnNumber: 33
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "src/pages/homePage.js",
-                        lineNumber: 103,
-                        columnNumber: 29
-                    }, undefined);
-                })
-            }, void 0, false, {
-                fileName: "src/pages/homePage.js",
-                lineNumber: 100,
+                lineNumber: 68,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/pages/homePage.js",
-        lineNumber: 79,
+        lineNumber: 66,
         columnNumber: 9
     }, undefined);
 };
-_s(HomePage, "rAKX11H9VZk8n5ggVhSwoIymnxw=", false, function() {
+_s(HomePage, "Xu2Xw2EKCeOK3uAlEVqYx7zG+i4=", false, function() {
     return [
         (0, _useCreateFolderDefault.default),
         (0, _useGetFileFoldersDefault.default),
-        (0, _useDeleteFoldersJsDefault.default),
+        (0, _useDeleteFoldersDefault.default),
         (0, _useUploadFileDefault.default)
     ];
 });
@@ -40194,7 +40343,7 @@ $RefreshReg$(_c, "HomePage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../components/navbar":"bSUVv","../hooks/useCreateFolder":"4GlDv","../hooks/useGetFileFolders":"5WRHd","../hooks/useDeleteFolders.js":"4R3KH","../hooks/useUploadFile":"3li3m","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bSUVv":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../components/navbar":"bSUVv","../hooks/useCreateFolder":"4GlDv","../hooks/useGetFileFolders":"5WRHd","../hooks/useUploadFile":"3li3m","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../hooks/useDeleteFolders":"4R3KH","../components/navbar/styles.css":"jxRIF"}],"bSUVv":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$07f4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -40357,44 +40506,7 @@ exports.default = useGetFileFolders;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react-redux":"62sf7","f90a3f31ef8dedd":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4R3KH":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _reactRedux = require("react-redux");
-var _s = $RefreshSig$();
-const useDeleteFolder = ()=>{
-    _s();
-    const { token } = (0, _reactRedux.useSelector)((e)=>e.auth);
-    const deleteFolder = async ({ name })=>{
-        try {
-            const res = await fetch("http://localhost:1100/api/v1/folder/delete", {
-                method: "POST",
-                body: JSON.stringify({
-                    name: name
-                }),
-                headers: {
-                    "content-type": "application/json",
-                    authorization: "Bearer " + token
-                }
-            });
-            const data = await res.json();
-            alert(data.message);
-        } catch (err) {
-            alert(err.message);
-        }
-    };
-    return {
-        deleteFolder
-    };
-};
-_s(useDeleteFolder, "q3a+4mKlkRRWq+NEwmbz/u9zHmM=", false, function() {
-    return [
-        (0, _reactRedux.useSelector)
-    ];
-});
-exports.default = useDeleteFolder;
-
-},{"react-redux":"62sf7","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3li3m":[function(require,module,exports) {
+},{"react-redux":"62sf7","f90a3f31ef8dedd":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3li3m":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$2739 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -40447,7 +40559,44 @@ exports.default = useUploadFile;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","react-redux":"62sf7","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dod02":[function(require,module,exports) {
+},{"react":"21dqq","react-redux":"62sf7","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4R3KH":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _reactRedux = require("react-redux");
+var _s = $RefreshSig$();
+const useDeleteFolder = ()=>{
+    _s();
+    const { token } = (0, _reactRedux.useSelector)((e)=>e.auth);
+    const deleteFolder = async ({ name })=>{
+        try {
+            const res = await fetch("http://localhost:1100/api/v1/folder/delete", {
+                method: "POST",
+                body: JSON.stringify({
+                    name: name
+                }),
+                headers: {
+                    "content-type": "application/json",
+                    authorization: "Bearer " + token
+                }
+            });
+            const data = await res.json();
+            alert(data.message);
+        } catch (err) {
+            alert(err.message);
+        }
+    };
+    return {
+        deleteFolder
+    };
+};
+_s(useDeleteFolder, "q3a+4mKlkRRWq+NEwmbz/u9zHmM=", false, function() {
+    return [
+        (0, _reactRedux.useSelector)
+    ];
+});
+exports.default = useDeleteFolder;
+
+},{"react-redux":"62sf7","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jxRIF":[function() {},{}],"dod02":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$c39b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

@@ -1,11 +1,193 @@
-.navbar-container{
+/* Reset and Font Settings */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f1f3f4;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: white;
+    background-color: #1a73e8;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #1558b3;
+}
+
+/* Navbar Styling */
+.navbar-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 16px 24px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-left-items h3 {
+    margin: 0;
+    color: #1a73e8;
+}
+
+.navbar-right-items button {
+    background-color: #1a73e8;
+}
+
+/* Homepage Layout */
+.homepage-main-container {
     padding: 24px;
-    background-color: bisque;
+}
+
+.homepage-main-container h1 {
+    font-size: 24px;
+    color: #202124;
+}
+
+.homepage-main-container h4 {
+    font-size: 18px;
+    color: #5f6368;
+}
+
+.file-upload-input {
+    cursor: pointer;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: black;
+    background-color: #fff;
+    transition: background-color 0.3s;
+}
+
+.file-upload-input:hover{
+    background-color: #1a73e8;
+    color: #fff;
+}
+
+.homepage-main-container button {
+    margin-right: 16px;
+}
+
+/* Folder Navigation */
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 24px 0;
+}
+
+ul li {
+    cursor: pointer;
+    color: #1a73e8;
+    margin-right: 8px;
+}
+
+ul li:hover {
+    text-decoration: underline;
+}
+
+/* Folder and File Item Styling */
+.folder-item, .file-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 150px;
+    padding: 16px;
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.folder-item:hover, .file-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.folder-item p, .file-item p {
+    margin: 0;
+    word-break: break-all;
+}
+
+/* Create Folder Modal */
+.create-folder-modal {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 16px;
+    transition: all 0.3s ease-in-out;
+    max-width: 300px;
+    margin: 16px auto;
+}
+
+.create-folder-modal input {
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.create-folder-modal input:focus {
+    border-color: #1a73e8;
+    outline: none;
+}
+
+.create-folder-modal button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #1a73e8;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 8px;
+    margin-bottom: 12px;
+
+
     
-    button{
-        background-color: brown;
+}
+
+.create-folder-modal button:hover {
+    background-color: #1558b3;
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .homepage-main-container {
+        padding: 16px;
     }
+
+    .folder-item, .file-item {
+        width: 100%;
+    }
+
+    ul {
+        flex-wrap: wrap;
+    }
+
+    ul li {
+        margin-bottom: 8px;
+    }
+}
+
+.btn-create{
+    margin:10px
 }
