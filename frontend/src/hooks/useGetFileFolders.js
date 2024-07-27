@@ -11,7 +11,7 @@ const useGetFileFolders = ()=>{
     const dispatch = useDispatch();
     const getFileFolders = async (parentId = null)=>{
         try {
-            const res = await fetch(`http://localhost:1100/api/v1/folder/file-folder`,{
+            const res = await fetch(`https://cloud-home-cqhy.onrender.com/folder/file-folder`,{
                 method:"POST",
                 body:JSON.stringify({parentId}),
                 headers:{

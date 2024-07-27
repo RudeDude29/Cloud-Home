@@ -6,7 +6,7 @@ const useSignup = () => {
 
     const signup = async ({ email, password }) => {
         try {
-            const res = await fetch(`http://localhost:1100/api/v1/auth/signup`, {
+            const res = await fetch(`https://cloud-home-cqhy.onrender.com/auth/signup`, {
                 method: "POST",
                 body: JSON.stringify({ email, password }),
                 headers: {

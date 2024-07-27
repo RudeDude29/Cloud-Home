@@ -13,7 +13,7 @@ const useUploadFile = () => {
             formData.append("file", file);
             formData.append("parentId", parentId);
 
-            const res = await fetch(`http://localhost:1100/api/v1/file`, {
+            const res = await fetch(`https://cloud-home-cqhy.onrender.com/file`, {
                 method: "POST",
                 body: formData,
                 headers: {

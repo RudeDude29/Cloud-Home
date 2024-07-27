@@ -8,7 +8,7 @@ const useCreateFolder = () =>{
         parentId,
     })=>{
         try {
-            const res = await fetch("http://localhost:1100/api/v1/folder/create",{
+            const res = await fetch("https://cloud-home-cqhy.onrender.com/folder/create",{
                 method:"POST",
                 body:JSON.stringify({
                     name:name,
