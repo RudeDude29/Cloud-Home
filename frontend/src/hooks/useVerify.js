@@ -10,7 +10,7 @@ const useVerify = () => {
     const verify = async ( otp ) => {
         
         try {
-            const res = await fetch(`https://cloud-home-cqhy.onrender.com/otp/verifyOtp`, {
+            const res = await fetch(`https://cloud-home-cqhy.onrender.com/api/v1/otp/verifyOtp`, {
                 method: "POST",
                 body: JSON.stringify({ otp }),
                 headers: {

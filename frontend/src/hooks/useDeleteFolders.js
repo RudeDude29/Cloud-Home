@@ -8,7 +8,7 @@ const useDeleteFolder = () =>{
         parentId,
     })=>{
         try {
-            const res = await fetch("https://cloud-home-cqhy.onrender.com/folder/delete",{
+            const res = await fetch("https://cloud-home-cqhy.onrender.com/api/v1/folder/delete",{
                 method:"POST",
                 body:JSON.stringify({
                     name:name,
