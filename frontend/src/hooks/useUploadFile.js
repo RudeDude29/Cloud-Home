@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const useUploadFile = () => {
     const { token } = useSelector((e) => e.auth);
     const [isUploadAllowed, setIsUploadAllowed] = useState(true);
@@ -22,7 +23,7 @@ const useUploadFile = () => {
 
             console.log("---->", res);
         } catch (err) {
-            alert(err);
+            toast.error(err);
         } finally {
             setIsUploadAllowed(true);
         }

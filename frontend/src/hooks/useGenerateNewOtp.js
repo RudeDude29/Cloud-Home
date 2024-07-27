@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const useGenerateNewOtp = () => {
     const { token } = useSelector((e) => e.auth);
 
@@ -13,12 +14,12 @@ const useGenerateNewOtp = () => {
             const data = await res.json();
 
             if (data.status === "success") {
-                alert(data.message);
+                toast.success(data.message);
             } else {
-                alert(data.message);
+                toast.error(data.message);
             }
         } catch (err) {
-            alert("Error: " + err.message);
+            toast.error("Error: " + err.message);
         }
     };
 

@@ -15,9 +15,9 @@ const sendOTPMail = async (email, otp) => {
         });
 
         const response = await mailer.sendMail({
-            from: "abcd", // likhilesh@<home.cloud.app>
+            from: "dummyidforuse029@gmail.com",
             to: email,
-            subject: "OTP", // OTP verification for your account
+            subject: "OTP", 
             html: `
                 <html>
                     <body>

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import useLogin from "../hooks/useLogin";
 import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const LoginPage = () => {
     const Navigate = useNavigate();
     const toLogin = ()=>{
@@ -64,12 +66,12 @@ const LoginPage = () => {
         if (validation) {
             login({ email, password });
         } else {
-            alert("Validation Failed");
+            toast.error("Validation Failed");
         }
     };
 
     return (
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" , background: "#f0f2f5" }}>
+        <div className="login-body" style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" , }}>
         <div style={loginPageStyles}>
         <h2>Login to Cloud-Home</h2>
             <input

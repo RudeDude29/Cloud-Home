@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { appLogout , emailVerified } from "../store/slices/authSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const useVerify = () => {
     // const navigate = useNavigate();
     const {token} = useSelector((e)=>e.auth) 
@@ -25,10 +27,10 @@ const useVerify = () => {
                 dispatch(appLogout());
             }
             else {
-                alert(data.message);
+                toast.error(data.message);
             }
         } catch (err) {
-            alert("verification error: " + err.message);
+            toast.error("verification error: " + err.message);
         }
     };
     return { verify };

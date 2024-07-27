@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { appLogin } from "../store/slices/authSlice";
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const useLogin = () => {
     const dispatch = useDispatch();
 
@@ -18,10 +19,10 @@ const useLogin = () => {
             if (data.status === "success") {
                 dispatch(appLogin(data));
             } else {
-                alert(data.message);
+                toast.error(data.message);
             }
         } catch (err) {
-            alert("Login error: " + err.message);
+            toast.error("Login error: " + err.message);
         }
     };
     return { login };

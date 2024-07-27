@@ -60,15 +60,21 @@ const getFileFolders = async (req,res)=>{
 }
 
 const deleteFolder = async (req,res)=>{
-    const {name} = req.body;
+    const {name,parentId} = req.body;
      const {_id} = req.user;
      try {
-        await fileModel.findOneAndDelete({name,userId:_id});
+        const fileDeleted = await fileModel.findOneAndDelete({name,parentId,userId:_id});
+        if(fileDeleted===null){
+            res.status(400).json({
+                status:"fail",
+                message:"File not exists"
+            })
+        }
         res.status(200);
         res.json({
             status:"success",
             message:"Deleted",
-        })
+        }) 
      } catch (error) {
         console.log(error);
         res.status(500).json({

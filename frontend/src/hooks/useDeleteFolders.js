@@ -1,15 +1,18 @@
 import { useSelector } from "react-redux";
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const useDeleteFolder = () =>{
     const {token} = useSelector((e)=>e.auth)
     const deleteFolder = async ({
         name,
+        parentId,
     })=>{
         try {
             const res = await fetch("http://localhost:1100/api/v1/folder/delete",{
                 method:"POST",
                 body:JSON.stringify({
                     name:name,
+                    parentId,
                 }),
                 headers:{
                  "content-type":"application/json",
@@ -17,10 +20,14 @@ const useDeleteFolder = () =>{
                 }
             });
             const data = await res.json();
-            
-            alert(data.message);
+            if(data.message==="File not exists"){
+                toast.error(data.message);
+            }
+            if(data.message==="success"){
+                toast.success(data.message)
+            }
         } catch (err) {
-            alert(err.message);
+            toast.error(err.message);
         }
         
     }

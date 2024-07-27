@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const useSignup = () => {
     const navigate = useNavigate();
 
@@ -17,10 +18,10 @@ const useSignup = () => {
             if (data.status === "success") {
                 navigate(`/login?email=${email}`);
             } else {
-                alert(data.message);
+                toast.error(data.message);
             }
         } catch (err) {
-            alert("Signup error: " + err.message);
+            toast.error("Signup error: " + err.message);
         }
     };
     return { signup };

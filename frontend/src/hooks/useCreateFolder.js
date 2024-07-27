@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const useCreateFolder = () =>{
     const {token} = useSelector((e)=>e.auth)
     const createFolder = async ({
@@ -19,10 +20,14 @@ const useCreateFolder = () =>{
                 }
             });
             const data = await res.json();
-            
-            alert(data.message);
+            if(data.message==="Folder name already exists"){
+               toast.error(data.message);
+            }
+            if(data.message==="Folder created"){
+                toast.success("Folder created successfully!");
+            }
         } catch (err) {
-            alert(err.message);
+            toast.error(err.message);
         }
         
     }

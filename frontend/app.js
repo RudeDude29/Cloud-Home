@@ -4,11 +4,14 @@ import { Provider } from "react-redux";
 import appStore from "./src/store/appStore";
 import AppRouter from "./appRouter";
 import "./globalStyles.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
     return (
         <Provider store={appStore}>
             <AppRouter />
+            <ToastContainer />
         </Provider>
     );
 };

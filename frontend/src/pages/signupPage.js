@@ -1,7 +1,8 @@
 import { useState } from "react";
 import useSignup from "../hooks/useSignup";
 import { useNavigate } from "react-router-dom";
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const SignupPage = () => {
     const navigate = useNavigate();
 
@@ -16,22 +17,22 @@ const SignupPage = () => {
         justifyContent: "center",
         gap: "24px",
         margin: "auto",
-        padding: "40px", // Increased padding for better spacing
+        padding: "40px", 
         maxWidth: "400px",
         border: "1px solid #ccc",
         borderRadius: "12px",
         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
         background: "#fff",
-        textAlign: "center" // Centered text alignment
+        textAlign: "center"
     };
 
     const inputStyles = {
         width: "100%",
-        padding: "12px", // Increased padding for better touch targets
+        padding: "12px", 
         borderRadius: "8px",
         border: "1px solid #ccc",
         fontSize: "1rem",
-        marginBottom: "16px", // Added margin bottom for spacing
+        marginBottom: "16px", 
     };
 
     const buttonStyles = {
@@ -42,15 +43,15 @@ const SignupPage = () => {
         borderRadius: "8px",
         cursor: "pointer",
         fontSize: "1rem",
-        width: "100%", // Full-width button
-        marginBottom: "16px", // Added margin bottom for spacing
+        width: "100%", 
+        marginBottom: "16px", 
     };
 
     const loginStyles = {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        gap: "4px", // Small gap between text and link
+        gap: "4px", 
     };
 
     const linkStyles = {
@@ -67,14 +68,14 @@ const SignupPage = () => {
         if (validation) {
             signup({ email, password });
         } else {
-            alert("Validation Failed");
+            toast.error("Validation Failed");
         }
     };
 
     return (
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", background: "#f0f2f5" }}>
+        <div className="signup-body" style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", }}>
             <div style={containerStyles}>
-                <h2>Sign Up to Cloud-Home</h2> {/* Added header for context */}
+                <h2>Sign Up to Cloud-Home</h2>
                 <input
                     type="text"
                     value={email}
@@ -94,7 +95,7 @@ const SignupPage = () => {
                 </button>
                 <div style={loginStyles}>
                     <span>Already have an account?</span>
-                    <span style={linkStyles} onClick={toLogin}>Login</span>
+                    <span className="signup-span" style={linkStyles} onClick={toLogin}>Login</span>
                 </div>
             </div>
         </div>
