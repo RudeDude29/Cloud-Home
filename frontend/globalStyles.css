@@ -1,0 +1,94 @@
+.otp-page-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 24px;
+    padding: 32px;
+    background-color: #ffffff;
+    gap: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.otp-input-container {
+    display: flex;
+    gap: 12px;
+}
+
+.input-otp {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    text-align: center;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    animation: input-focus-animation 0.3s forwards;
+}
+
+input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+    background-color: #fff;
+}
+
+@keyframes input-focus-animation {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.otp-p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 24px;
+}
+
+.signup-body{
+    height: 100vh;
+    background: url('../coding_bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.login-body{
+    height: 100vh;
+    background: url('../coding_bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.otp-body{
+    height: 90vh;
+    background: url('../OTP_bg.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 24px;
+    padding: 32px;
+}
