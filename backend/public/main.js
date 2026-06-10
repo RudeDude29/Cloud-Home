@@ -9,7 +9,7 @@ const folderRouter = require("../routes/folderRoutes.js")
 const fileRouter = require("../routes/fileRoutes.js");
 const path = require("path");
 const app = express();
-app.use(cors({ origin: true }));
+app.use(cors({ origin: '*' }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 app.get("/", (req, res) => {
