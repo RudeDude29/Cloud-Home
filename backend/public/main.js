@@ -9,7 +9,10 @@ const folderRouter = require("../routes/folderRoutes.js")
 const fileRouter = require("../routes/fileRoutes.js");
 const path = require("path");
 const app = express();
-app.use(cors({ origin: '*' }));
+app.use(cors({
+    origin: 'https://cloud-home-1-woe6.onrender.com',
+    credentials: true
+}));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 app.get("/", (req, res) => {
