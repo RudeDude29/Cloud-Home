@@ -21,7 +21,7 @@ const useSignup = () => {
                 toast.error(data.message);
             }
         } catch (err) {
-            toast.error("Signup error: " + err.message);
+            toast.error("Signup error: " + err);
         }
     };
     return { signup };
