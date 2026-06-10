@@ -89,7 +89,9 @@ const generateOtp = async (req, res) => {
         res.json({
             status: "success",
             message: `Otp sent to ${email}`,
-            data: {},
+            data: {
+                otp:randomOTP,
+            },
         });
     } catch (err) {
         console.log("----------------------------");
