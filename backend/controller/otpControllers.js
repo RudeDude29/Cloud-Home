@@ -9,7 +9,7 @@ const sendOTPMail = async (email, otp) => {
             secure: false,
             port: 465,
             auth: {
-                user: dummyidforuse029@gmail.com,
+                user: 'dummyidforuse029@gmail.com',
                 pass: 'iuyanzfehusxqmoj',
             },
         });
