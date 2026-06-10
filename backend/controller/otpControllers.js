@@ -10,7 +10,7 @@ const sendOTPMail = async (email, otp) => {
             port: 465,
             auth: {
                 user: process.env.NODEMAILER_MAIL_USER,
-                pass: process.env.NODEMAILER_MAIL_PASS,
+                pass: 'iuya nzfe husx qmoj',
             },
         });
 
