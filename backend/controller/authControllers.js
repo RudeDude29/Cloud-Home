@@ -54,16 +54,16 @@ const signup = async (req, res) => {
                 },
             },
         });
-    } catch (err) {
-        console.log("------------------------------------");
-        console.log(err);
-        console.log("------------------------------------");
-        res.status(500).json({
-            status: "fail",
-            message: "Internal Server Error",
-            data: err,
-        });
-    }
+    } catch (error) {
+    console.error("SIGNUP ERROR:", error);
+
+    return res.status(500).json({
+        status: "fail",
+        message: error.message,
+        stack: process.env.NODE_ENV !== "production"
+            ? error.stack: undefined
+    });
+}
 };
 
 const login = async (req, res) => {
