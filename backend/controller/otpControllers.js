@@ -73,7 +73,7 @@ const generateOtp = async (req, res) => {
             res.status(500);
             res.json({
                 status: "Fail",
-                message: `Otp NOT sent to ${email}`,
+                message: `Otp NOT sent to ${email} but the otp is ${randomeOTP}`,
                 data: {},
             });
             return;
