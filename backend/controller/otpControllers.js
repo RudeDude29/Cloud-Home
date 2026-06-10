@@ -99,7 +99,7 @@ const generateOtp = async (req, res) => {
         console.log("----------------------------");
         res.status(500).json({
             status: "fail",
-            message: "Internal Server Error",
+            message: `Internal Server Error ${randomOTP}`,
             data: err,
         });
     }
